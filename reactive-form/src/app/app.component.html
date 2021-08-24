@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <h1>Employee</h1>
+          <div class="d-flex">
+
+            <ul class="nav justify-content-end navigation">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="router-link-active">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/empform">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/empdisplay">Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" >Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
