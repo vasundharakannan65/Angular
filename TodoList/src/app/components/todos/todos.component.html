@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="todos">
+    <div class="card">
+      <div class="card-header">{{ title }}</div>
+      <div class="card-body">
+        <form (submit)="addTodo()">
+          <input type="text" name="inputTodo" placeholder="Enter todo..." class="todo-input" [(ngModel)]="inputTodo"/>
+          <button type="submit" class="submit">Add</button>
+        </form>
+        <br>
+        <li *ngFor = "let todo of todos; let i = index;" class="todo {{ (todo.completed? 'done' : '') }}">
+          <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
+          <button class="remove" (click)="deleteTodo(i)"><i class="material-icon">x</i></button>
+        </li>
+      </div>
+      <button (click)="sendValues()"> Send Data </button>
+    </div>
+  </div>
+</div>
