@@ -1,0 +1,87 @@
+<table>
+
+  <thead>
+  <tr>
+    <td>Isbn</td>
+    <td>Title</td>
+    <td>Description</td>
+    <td>Author</td>
+    <td>Price</td>
+    <td>Action</td>
+  </tr>
+  </thead>
+
+  <tbody *ngFor="let b of bookList; let i=index">
+    <tr>
+      <td>{{ b.bookIsbn }}</td>
+      <td>{{ b.bookTitle }}</td>
+      <td>{{ b.bookDesc }}</td>
+      <td>{{ b.bookAuthor }}</td>
+      <td>{{ b.bookPrice }}</td>
+      <td><button (click)="showDetails(i,b)">Edit</button>
+    </tr>
+  </tbody>
+
+</table>
+<ng-template #content let-modal>
+
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Book update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <form>
+
+      <li *ngFor="let s of specificBook; let i=index">
+
+      <div class="form-group">
+        <label for="bookIsbn">Book Isbn:</label>
+        <div class="input-group">
+          <input id="bookIsbn" class="form-control" placeholder="{{s.bookIsbn}}" disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bookTitle">Book Title:</label>
+        <div class="input-group">
+          <input id="bookTitle" class="form-control" placeholder="{{s.bookTitle}}" disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bookTitle">Book Desc:</label>
+        <div class="input-group">
+          <textarea name="bookDesc" rows="4"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bookTitle">Book Title:</label>
+        <div class="input-group">
+          <input id="bookTitle" class="form-control" placeholder="{{s.bookTitle}}" disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="bookTitle">Book Title:</label>
+        <div class="input-group">
+          <input id="bookTitle" class="form-control" placeholder="{{s.bookTitle}}" disabled>
+        </div>
+      </div>
+
+    </li>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<app-bookedit [specificbook]="specificBook"></app-bookedit>
+
+
