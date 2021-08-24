@@ -1,0 +1,51 @@
+span
+{
+  color: red;
+}
+.panel
+{
+  background-color: rgba(255, 255, 255, 0.432);
+  margin-bottom: 50px;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.panel-body
+{
+  padding:15px;
+}
+
+.panel-header .panel-title
+{
+  padding:8px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.sidebar-wrapper
+{
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  padding:20px;
+  height: 700px;
+  position: relative;
+}
+.form
+{
+  color: rgb(155, 2, 2);
+}
+.sidebar-wrapper ul li
+{
+  padding: 10px;
+  display:block;
+  font-size: medium;
+}
+
+ul >li:hover
+{
+  background-color:cadetblue;
+}
+
+ul li a{
+  color: black;
+}

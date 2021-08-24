@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <nav class="navbar navbar-light bg-light" style="background-color: rgba(255, 255, 255, 0.336);">
+        <div class="container-fluid">
+          <div class="d-flex">
+
+            <ul class="nav justify-content-end navigation">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="router-link-active">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" >Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

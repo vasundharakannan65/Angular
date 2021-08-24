@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col-3">
+    <div class="sidebar-wrapper">
+      <ul class="nav flex-column fixed">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/personal" routerLinkActive="router-link-active">Personal Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/professional" routerLinkActive="router-link-active">Professional Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/attachments" routerLinkActive="router-link-active">Attachments</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+    <div class="col-9">
+      <form [formGroup]="professionalForm" *ngIf="professionalForm"  (ngSubmit)="onSubmit(professionalForm)">
+
+        <div class="panel center-div mt-3">
+            <div class="panel-header">
+               <h5 class="panel-title text-center p-2">Registration Form</h5>
+               <hr>
+            </div>
+
+            <div class="panel-body center-div">
+
+            <div class="row" formArrayName="professionalDetailForm"
+            *ngFor="let item of professionalForm.get('professionalDetailForm')['controls']; let i=index;">
+
+                  <div class="col" [formGroupName]="i">
+
+                        <div class="form-group">
+                          <label for="" class="col-sm-4 col-form-label">Company</label>
+                          <div class="col-sm-12">
+                            <input type="text" class="form-control" id="company" formControlName="company" placeholder=""/>
+                            <span *ngIf="!professionalForm.get('company')?.valid && professionalForm.get('company')?.touched" class="help-block">This field is mandatory</span>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 col-form-label">Designation</label>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" id="designation" formControlName="designation" placeholder=""/>
+                              <span *ngIf="!professionalForm.get('designation')?.valid && professionalForm.get('designation')?.touched" class="help-block">This field is mandatory</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 col-form-label">Start Date</label>
+                            <div class="col-sm-12">
+                              <input type="date" class="form-control" id="startdate" formControlName="startdate" placeholder="" />
+                              <span *ngIf="!professionalForm.get('startdate')?.valid && professionalForm.get('startdate')?.touched" class="help-block">This field is mandatory</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 col-form-label">Last Date</label>
+                            <div class="col-sm-12">
+                              <input type="date" class="form-control" id="lastdate" formControlName="lastdate" placeholder=""/>
+                              <span *ngIf="!professionalForm.get('lastdate')?.valid && professionalForm.get('lastdate')?.touched" class="help-block">This field is mandatory</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-2 col-form-label">Skills</label>
+                            <div class="col-sm-12">
+                              <textarea class="form-control" id="skills" rows="3" formControlName="skills"></textarea>
+                              <span *ngIf="!professionalForm.get('skills')?.valid && professionalForm.get('skills')?.touched" class="help-block">This field is mandatory</span>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group mt-2">
+                  <button type="button" (click)="addCompany()" class="btn btn-primary">Add Company</button>
+                </div>
+              </div>
+            </div>
+
+                        <div class="panel-footer p-4 center-div">
+                          <div class="form-group">
+                            <div class="btn btn-group">
+                              <button type="button" (click)="onNext()" class="btn btn-primary">Next</button>
+                              <!-- <button type="submit" [disabled]="!personalForm.valid" class="btn btn-primary">Next</button> -->
+                            </div>
+                            <div class="btn btn-group">
+                              <button type="reset" class="btn btn-primary">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+
+          </div>
+
+        </div>
+      </form>
+    </div>
+</div>
+
+

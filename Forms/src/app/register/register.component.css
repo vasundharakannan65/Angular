@@ -1,0 +1,54 @@
+.sidebar-wrapper
+{
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  padding:15px;
+  height: 700px;
+  position: relative;
+}
+
+.card
+{
+  width: 900px;
+  height: fit-content;
+}
+
+.card-body
+{
+ padding: 20px;
+}
+
+.sidebar-wrapper ul li
+{
+  padding: 10px;
+  display:block;
+  font-size: medium;
+}
+
+ul >li:hover
+{
+  background-color:cadetblue;
+}
+
+ul li a{
+  color: black;
+}
+
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey
+}
+
+#progressbar .active {
+  color: #673AB7
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: 15px;
+  width: 25%;
+  float: left;
+  position: relative;
+  font-weight: 400
+}

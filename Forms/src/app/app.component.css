@@ -1,0 +1,11 @@
+.navbar
+{
+  width: -webkit-fill-available;
+  padding: 10px;
+  border-color: rgb(0, 0, 0);
+}
+
+a img
+{
+  color: white;
+}
