@@ -1,0 +1,11 @@
+.navbar
+{
+  width: -webkit-fill-available;
+  height: 70px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.nav .nav-item .nav-link .active>a:hover{background-color: blue;}
+

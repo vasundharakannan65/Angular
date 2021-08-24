@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image:url("./assets/images/bgg.jpg");
+  background-size:100%;
+  justify-content: center;
+  margin-top: 100px;
+}

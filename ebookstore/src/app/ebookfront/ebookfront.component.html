@@ -1,0 +1,87 @@
+<nav class="navbar navbar-light bg-light col-12 col-md-8">
+  <div class="container">
+    <h1>E-BookStore</h1>
+    <div class="d-flex">
+
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="router-link-active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLinkActive="router-link-active">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLinkActive="router-link-active">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Contact</a>
+        </li>
+      </ul>
+
+      <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Add Book</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col">
+            <form id="myform">
+
+              <div class="mb-3">
+                <label class="form-label">Book Isbn:</label>
+                <input type="number" class="form-control" #bookIsbn>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Title:</label>
+                <input type="text" class="form-control" #bookTitle>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Description:</label>
+                <textarea class="form-control" rows="3" #bookDesc></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Author:</label>
+                <input type="text" class="form-control" #bookAuthor required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Price:</label>
+                <input type="number" class="form-control" #bookPrice required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Image:</label>
+                <input type="file" class="form-control"  name="image" #bookImg (change)="onSelectFile($event)">
+                <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onBookCreated(bookIsbn.valueAsNumber,bookTitle.value,bookDesc.value,bookAuthor.value,bookPrice.valueAsNumber,bookImg.value)">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

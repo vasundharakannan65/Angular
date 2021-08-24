@@ -1,0 +1,126 @@
+<table class="table mt-4 table-bordered table-responsive col-xs-12 col-sm-6 col-md-8">
+
+  <thead>
+  <tr>
+    <th scope="col">Isbn</th>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+    <th scope="col">Author</th>
+    <th scope="col">Price</th>
+    <th scope="col">Image</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let b of books; let i=index" (click) = "collectdata(i)">
+      <!-- <td><button  (click) = "toggleCollapse(i)" class="btn btn-primary"> {{b.bookIsbn}} </button></td> -->
+      <td>{{ b.bookIsbn }}</td>
+      <td>{{ b.bookTitle }}</td>
+      <td>{{ b.bookDesc }}</td>
+      <td>{{ b.bookAuthor }}</td>
+      <td>${{ b.bookPrice.toFixed(2) }}</td>
+      <td><img src="{{ b.bookImage }}" class="img img-thumbnail w-50 h-10"></td>
+      <td>
+        <button class="btn btn-primary mx-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal2">Show</button>
+        <button (click)="onBookEdited(i)" class="btn btn-primary mx-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal1">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+
+<!-- <div class="container" [hidden] = "isCollapsed" >
+  <h6> ISBN No :{{ selectedBook.bookIsbn }}</h6>
+  <h6> Book Title : {{ selectedBook.bookTitle }} </h6>
+  <h6> Book Description : {{ selectedBook.bookDesc }} </h6>
+  <h6> Book Author : {{ selectedBook.bookAuthor }} </h6>
+  <h6> Book Price : ${{ selectedBook.bookPrice }}</h6>
+</div> -->
+
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Book Update</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col">
+            <form id="myform">
+
+              <div class="mb-3">
+                <label class="form-label">Book Isbn:</label>
+                <input type="number" class="form-control" #bookIsbn disabled/>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Title:</label>
+                <input type="text" class="form-control" #bookTitle disabled/>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Description:</label>
+                <textarea class="form-control" rows="3"  #bookDesc required></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Author:</label>
+                <input type="text" class="form-control"  #bookAuthor disabled/>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Price:</label>
+                <input type="number" class="form-control" #bookPrice required/>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Image:</label>
+                <input type="file" class="form-control" #bookImage disabled/>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancels" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onBookUpdate(bookDesc.value,bookPrice.valueAsNumber)">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col">
+
+            <!-- <div class="container" [hidden] = "isCollapsed" > -->
+              <h6> Book Isbn no. : {{ selectedBook.bookIsbn }}</h6>
+              <h6> Book Title : {{ selectedBook.bookTitle }} </h6>
+              <h6> Book Description : {{ selectedBook.bookDesc }} </h6>
+              <h6> Book Author : {{ selectedBook.bookAuthor }} </h6>
+              <h6> Book Price : ${{ selectedBook.bookPrice }}</h6>
+            <!-- </div> -->
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>

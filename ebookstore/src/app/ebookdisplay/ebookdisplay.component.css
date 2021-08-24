@@ -1,0 +1,13 @@
+.table
+{
+    margin: 20px;
+    margin-left: 130px;
+    padding: 3px;
+    table-layout: fixed;
+    width: 1200px;
+    border: white;
+    border-radius: 10px;
+    text-align: center;
+    background: white;
+    color: black;
+}
