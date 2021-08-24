@@ -1,0 +1,23 @@
+li .content
+{
+  display: block;
+  width:290px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  height:60px;
+  margin-block: 5px;
+  justify-content: space-evenly;
+  padding: 10px;
+  color: black;
+}
+
+li
+{
+  list-style-type: none;
+}
+
+li button
+{
+  margin:5px;
+  color: white;
+}

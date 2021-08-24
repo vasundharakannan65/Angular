@@ -1,0 +1,9 @@
+<li *ngFor = "let s of student; let i = index;">
+  <div class="content">Name: {{ s.name }}<br> Status: {{ s.status }}</div>
+  <div class="d-grid gap-3 d-md-block">
+    <button class="btn btn-sm btn btn-primary" (click)="changeActive(i,'Active')">Active</button>
+    <button class="btn btn-sm btn btn-primary" (click)="changeInactive(i,'Inactive')">Inactive</button>
+  </div>
+</li>
+
+

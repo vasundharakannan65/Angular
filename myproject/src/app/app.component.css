@@ -1,0 +1,32 @@
+.card
+{
+  margin: 0 auto;
+  padding: 50px;
+  border: 50px;
+  width:400px;
+  background-color: rgba(0, 0, 0, 0.230);
+  border-radius: 10px;
+  color: white;
+}
+
+.card-head{
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.container
+{
+  font-family: sans-serif;
+  margin:0 auto;
+  padding:0px;
+  width: auto;
+  border: 0px;
+  justify-content: center;
+  margin-top: 100px;
+
+}
+

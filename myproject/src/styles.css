@@ -1,0 +1,11 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image:url("./assets/images/wp7213366.jpg");
+  background-size: cover;
+  background-size: 100%;
+  justify-content: center;
+  margin-top: 100px;
+}
