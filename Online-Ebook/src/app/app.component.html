@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <h1>E-BookStore</h1>
+          <div class="d-flex">
+
+            <ul class="nav justify-content-end navigation">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="router-link-active">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/addbook" >AddBook</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/displaybook">DisplayBook</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/individualbook">IndividualBook</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+
+  <div class="footer-clean">
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Legacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>Careers</h3>
+                    <ul>
+                        <li><a href="#">Job openings</a></li>
+                        <li><a href="#">Employee success</a></li>
+                        <li><a href="#">Benefits</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                    <p class="copyright">Online E-BookStore © 2021</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </div>
+
+</div>

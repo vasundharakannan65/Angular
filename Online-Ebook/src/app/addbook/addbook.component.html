@@ -1,0 +1,54 @@
+<div class="panel col-md-5 center-div mt-3">
+   <div class="panel-header">
+      <h5 class="panel-title text-center">Add Book</h5>
+      <hr>
+   </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col">
+            <form id="myform">
+
+              <div class="mb-3">
+                <label class="form-label">Book Isbn:</label>
+                <input type="number" class="form-control" #bookIsbn>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Title:</label>
+                <input type="text" class="form-control" #bookTitle>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Description:</label>
+                <textarea class="form-control" rows="3" #bookDesc></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Author:</label>
+                <input type="text" class="form-control" #bookAuthor required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Price:</label>
+                <input type="number" class="form-control" #bookPrice required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Book Image:</label>
+                <input type="file" class="form-control"  name="image" #bookImg (change)="onSelectFile($event)">
+                <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+        <br>
+        <div class="btn btn-group">
+          <button type="reset" id="cancel" class="btn btn-primary">Cancel</button>
+        </div>
+        <div class="btn btn-group">
+          <button type="button" [routerLink]="['/displaybook']" class="btn btn-primary" (click)="onBookCreated(bookIsbn.valueAsNumber,bookTitle.value,bookDesc.value,bookAuthor.value,bookPrice.valueAsNumber,bookImg.value)">Add</button>
+        </div>
+      </div>
+    </div>

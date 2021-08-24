@@ -1,0 +1,24 @@
+.panel
+{
+  background-color: white;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+.panel-body
+{
+  padding:15px;
+}
+
+.panel-header .panel-title
+{
+  padding:8px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.img
+{
+  width:80px;
+  height:100px;
+}

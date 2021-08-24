@@ -1,0 +1,51 @@
+.panel
+{
+  background-color: white;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  border:10px;
+}
+
+.panel-body
+{
+  padding:15px;
+}
+
+.panel-header .panel-title
+{
+  padding:8px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.img
+{
+  width:80px;
+  height:100px;
+}
+
+.content-text h6
+{
+  padding:3px;
+  font-size: 15px;
+  font-weight: bolder;
+  float: right;
+}
+
+.span
+{
+  background-color: aqua;
+}
+
+#mylist
+{
+  list-style-type:none;
+  padding: 2px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+#mylist .li
+{
+  padding: 5px;
+}

@@ -1,0 +1,102 @@
+<div class="panel col-md-9 center-div mt-3">
+  <div class="panel-header p-2">
+    <div class="panel-title text-center">List of Available Books</div>
+    <hr>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col">
+
+        <div class="text-center">
+            <table class="table mt-4 table-bordered">
+
+                <thead>
+                <tr>
+                  <th scope="col"> Isbn </th>
+                  <th scope="col"> Title </th>
+                  <th scope="col"> Description </th>
+                  <th scope="col"> Author </th>
+                  <th scope="col"> Price </th>
+                  <th scope="col"> Image </th>
+                  <th scope="col"> Action </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let book of books; let i=index" (click) = "collectdata(i)">
+
+                    <td>{{ book.bookIsbn }}</td>
+                    <td>{{ book.bookTitle }}</td>
+                    <td>{{ book.bookDesc }}</td>
+                    <td>{{ book.bookAuthor }}</td>
+                    <td>${{ book.bookPrice.toFixed(2) }}</td>
+                    <td><img src="{{ book.bookImage }}" class="img img-thumbnail"></td>
+                    <td>
+                    <a [routerLink]="['/individualbook',i]" role="button" class="btn btn-primary">Show</a>
+                    <!-- <a [routerLink]="['/editbook/',i]" role="button" class="btn btn-primary">Show</a> -->
+                    <button (click)="onBookEdit(i)" class="btn btn-secondary mx-2 " data-bs-toggle="modal" data-bs-target="#exampleModal1">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="onBookDelete(book.bookIsbn)">Delete</button>
+                    </td>
+
+                  </tr>
+                </tbody>
+
+              </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Book Update</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <form id="myform">
+
+                <div class="mb-3">
+                  <label class="form-label">Book Isbn:</label>
+                  <input type="number" class="form-control" #bookIsbn value="{{books[index].bookIsbn}}" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Book Title:</label>
+                  <input type="text" class="form-control" #bookTitle value="{{books[index].bookTitle}}" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Book Description:</label>
+                  <textarea class="form-control" rows="3" #bookDesc value="{{books[index].bookDesc}}" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Book Author:</label>
+                  <input type="text" class="form-control" #bookAuthor value="{{books[index].bookAuthor}}" disabled>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Book Price:</label>
+                  <input type="number" class="form-control" #bookPrice value="{{books[index].bookPrice}}" required>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancels" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="onBookUpdate(bookDesc.value,bookPrice.valueAsNumber)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

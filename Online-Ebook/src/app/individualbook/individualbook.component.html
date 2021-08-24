@@ -1,0 +1,29 @@
+<div class="panel col-md-6 center-div mt-3">
+  <div class="panel-header p-2">
+    <div class="panel-title text-center">Book Details</div>
+    <hr>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col">
+
+        <div class="text-center d-flex p-2">
+
+          <img src="{{ books[id].bookImage }}" class="rounded img-thumbnail">
+          <br>
+          <div class="content-text text-left d-flex p-5">
+            <ul id="mylist">
+          <li>Book Isbn no. : {{ books[id].bookIsbn }}</li>
+          <li>Book Title : {{ books[id].bookTitle }}</li>
+          <li>Book Description : {{ books[id].bookDesc }}</li>
+          <li>Book Author : {{ books[id].bookAuthor }}</li>
+          <li>Book Price : ${{ books[id].bookPrice }}</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

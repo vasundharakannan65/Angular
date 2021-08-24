@@ -1,0 +1,23 @@
+.panel
+{
+  background-color: white;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+.panel-body
+{
+  padding:15px;
+}
+
+.panel-header .panel-title
+{
+  padding:8px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+/* .panel-title
+{
+  padding: 10px;
+  margin-top: 10px;
+} */
